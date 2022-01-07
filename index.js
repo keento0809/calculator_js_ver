@@ -1,6 +1,7 @@
 // Get DOM
 const display = document.querySelector("#display");
 const tds = document.querySelectorAll("td");
+const nums = document.querySelectorAll(".num");
 
 const reset = document.querySelector("#reset");
 const divide = document.querySelector("#divide");
@@ -10,6 +11,7 @@ const plus = document.querySelector("#plus");
 const equal = document.querySelector("#equal");
 
 let screen = [];
+let final = [];
 let marks = [divide, multiply, minus, plus];
 
 // Build out function
@@ -28,6 +30,7 @@ function test(e) {
   e.preventDefault();
   screen.push(this.textContent);
   display.textContent = mapArr(screen);
+  // console.log(screen);
 }
 
 function resetValue() {
@@ -36,21 +39,29 @@ function resetValue() {
 }
 
 function calculate() {
-  console.log("Mark clicked!");
-  // let val1 = parseInt(display.textContent);
-  // console.log(val1);
-  // display.textContent = "";
-  // let val2 = [];
-  // val2.push();
+  console.log(this);
+  const val = screen.join("");
+  final.push(parseInt(val));
+  final.push(this.textContent);
+  screen = [];
 }
 
 function terminateCalculation() {
-  console.log("Calculation done.");
+  calculate();
+  console.log(final);
+  const result = final.join("");
+  display.textContent = result;
+  console.log(typeof result);
+  screen = [];
+  final = [];
 }
 
 // Hook up the event
-tds.forEach((td) => td.addEventListener("click", test));
+nums.forEach((num) => num.addEventListener("click", test));
 marks.forEach((mark) => mark.addEventListener("click", calculate));
 
 reset.addEventListener("click", resetValue);
 equal.addEventListener("click", terminateCalculation);
+
+// console.log(3 + 4 - (10 * 2) / 2 + 12);
+// console.log(typeof(+));
