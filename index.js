@@ -10,6 +10,7 @@ const plus = document.querySelector("#plus");
 const equal = document.querySelector("#equal");
 
 let screen = [];
+let marks = [divide, multiply, minus, plus];
 
 // Build out function
 function mapArr(arr) {
@@ -20,7 +21,6 @@ function mapArr(arr) {
         `;
     })
     .join("");
-  console.log(html);
   return html;
 }
 
@@ -28,7 +28,6 @@ function test(e) {
   e.preventDefault();
   screen.push(this.textContent);
   display.textContent = mapArr(screen);
-  console.log(display.textContent);
 }
 
 function resetValue() {
@@ -36,9 +35,22 @@ function resetValue() {
   screen = [];
 }
 
-function calculate() {}
+function calculate() {
+  console.log("Mark clicked!");
+  // let val1 = parseInt(display.textContent);
+  // console.log(val1);
+  // display.textContent = "";
+  // let val2 = [];
+  // val2.push();
+}
+
+function terminateCalculation() {
+  console.log("Calculation done.");
+}
 
 // Hook up the event
 tds.forEach((td) => td.addEventListener("click", test));
+marks.forEach((mark) => mark.addEventListener("click", calculate));
 
 reset.addEventListener("click", resetValue);
+equal.addEventListener("click", terminateCalculation);

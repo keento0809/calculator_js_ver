@@ -4,8 +4,8 @@
 
 p {
   // width: 100%;
-  border: 2px solid #333;
-  padding: 5px 15px;
+  // border: 2px solid #333;
+  padding: 5px 10px;
 }
 
 td {
@@ -17,6 +17,11 @@ td {
 #global-container {
   max-width: 227px;
   margin: 0 auto;
+}
+
+.display {
+  border: 2px solid #333;
+  height: 40px;
 }
 
 table,
