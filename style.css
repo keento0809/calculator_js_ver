@@ -60,4 +60,8 @@ table,
 p {
   margin: 0 auto;
 }
+
+.mark.whiten {
+  background-color: #fff;
+}
 /*# sourceMappingURL=style.css.map */

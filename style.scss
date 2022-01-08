@@ -61,3 +61,11 @@ p {
   // width: 100%;
   margin: 0 auto;
 }
+
+.mark {
+  // font-size: 10px;
+
+  &.whiten {
+    background-color: #fff;
+  }
+}
