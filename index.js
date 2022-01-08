@@ -1,85 +1,36 @@
-function update(_v) {
-  document.querySelector("input").value = _v;
+// Get DOM
+const calculateKeys = document.querySelectorAll(".calculateKey");
+const display = document.querySelector("input");
+const equalKey = document.querySelector("#equal");
+const resetKey = document.querySelector("#reset");
+
+// Build out function
+function showResult(val) {
+  display.value = val;
 }
 
-function append(_v) {
-  document.querySelector("input").value += _v;
+function appendKey() {
+  console.log(this.value);
+  display.value += this.value;
 }
 
-function calc() {
-  const v = document.querySelector("input").value;
+function calculate() {
+  const value = display.value;
   try {
-    const f = new Function("return " + v);
-    update(f().toString());
-  } catch (_error) {
-    update(_error);
+    const func = new Function("return " + value);
+    showResult(func().toString());
+  } catch (err) {
+    showResult(err);
   }
 }
 
-// // Get DOM
-// const display = document.querySelector("#display");
-// const tds = document.querySelectorAll("td");
-// const nums = document.querySelectorAll(".num");
+function reset() {
+  showResult("");
+}
 
-// const reset = document.querySelector("#reset");
-// const divide = document.querySelector("#divide");
-// const multiply = document.querySelector("#multiply");
-// const minus = document.querySelector("#minus");
-// const plus = document.querySelector("#plus");
-// const equal = document.querySelector("#equal");
-
-// let screen = [];
-// let final = [];
-// let marks = [divide, multiply, minus, plus];
-
-// // Build out function
-// function mapArr(arr) {
-//   const html = arr
-//     .map((val) => {
-//       return `
-//           ${val}
-//         `;
-//     })
-//     .join("");
-//   return html;
-// }
-
-// function test(e) {
-//   e.preventDefault();
-//   screen.push(this.textContent);
-//   display.textContent = mapArr(screen);
-//   // console.log(screen);
-// }
-
-// function resetValue() {
-//   display.textContent = "";
-//   screen = [];
-// }
-
-// function calculate() {
-//   console.log(this);
-//   const val = screen.join("");
-//   final.push(parseInt(val));
-//   final.push(this.textContent);
-//   screen = [];
-// }
-
-// function terminateCalculation() {
-//   calculate();
-//   console.log(final);
-//   const result = final.join("");
-//   display.textContent = result;
-//   console.log(typeof result);
-//   screen = [];
-//   final = [];
-// }
-
-// // Hook up the event
-// nums.forEach((num) => num.addEventListener("click", test));
-// marks.forEach((mark) => mark.addEventListener("click", calculate));
-
-// reset.addEventListener("click", resetValue);
-// equal.addEventListener("click", terminateCalculation);
-
-// // console.log(3 + 4 - (10 * 2) / 2 + 12);
-// // console.log(typeof(+));
+// Hook up the event
+calculateKeys.forEach((calculateKey) =>
+  calculateKey.addEventListener("click", appendKey)
+);
+equalKey.addEventListener("click", calculate);
+resetKey.addEventListener("click", reset);

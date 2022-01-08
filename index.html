@@ -9,27 +9,37 @@
   </head>
   <body>
     <div id="global-container">
-      <!-- <div class="display">
-      </div> -->
+      <input />
       <table>
-        <thead>
-          <input />
-        </thead>
         <tbody>
           <tr>
-            <td><button id="reset" onclick="update('')">AC</button></td>
-            <td><button onclick="append('**0.5')">√</button></td>
-            <td><button id="percent" onclick="append('**')">^</button></td>
-            <td><button id="divide" onclick="append('/')">&divide;</button></td>
-            <!-- <td>%</td> -->
-            <!-- <td id="divide">&divide;</td> -->
+            <td><button id="reset">AC</button></td>
+            <td>
+              <button class="calculateKey" value="**0.5">√</button>
+            </td>
+            <td>
+              <button id="percent" class="calculateKey" value="**">^</button>
+            </td>
+            <td>
+              <button id="divide" class="calculateKey" value="/">
+                &divide;
+              </button>
+            </td>
           </tr>
           <tr>
-            <td><button class="num" onclick="append('7')">7</button></td>
-            <td><button class="num" onclick="append('8')">8</button></td>
-            <td><button class="num" onclick="append('9')">9</button></td>
             <td>
-              <button id="multiply" onclick="append('*')">&times;</button>
+              <button class="num calculateKey" value="7">7</button>
+            </td>
+            <td>
+              <button class="num calculateKey" value="8">8</button>
+            </td>
+            <td>
+              <button class="num calculateKey" value="9">9</button>
+            </td>
+            <td>
+              <button id="multiply" class="calculateKey" value="*">
+                &times;
+              </button>
             </td>
             <!-- <td class="num">7</td>
             <td class="num">8</td>
@@ -37,33 +47,37 @@
             <td id="multiply">&times;</td> -->
           </tr>
           <tr>
-            <td><button class="num" onclick="append('4')">4</button></td>
-            <td><button class="num" onclick="append('5')">5</button></td>
-            <td><button class="num" onclick="append('6')">6</button></td>
-            <td><button id="minus" onclick="append('-')">&minus;</button></td>
-            <!-- <td class="num">4</td>
-            <td class="num">5</td>
-            <td class="num">6</td>
-            <td id="minus">&minus;</td> -->
+            <td>
+              <button class="num calculateKey" value="4">4</button>
+            </td>
+            <td>
+              <button class="num calculateKey" value="5">5</button>
+            </td>
+            <td>
+              <button class="num calculateKey" value="6">6</button>
+            </td>
+            <td>
+              <button id="minus" class="calculateKey" value="-">&minus;</button>
+            </td>
           </tr>
           <tr>
-            <td><button class="num" onclick="append('1')">1</button></td>
-            <td><button class="num" onclick="append('2')">2</button></td>
-            <td><button class="num" onclick="append('3')">3</button></td>
-            <td><button id="plus" onclick="append('+')">+</button></td>
-            <!-- <td class="num">1</td>
-            <td class="num">2</td>
-            <td class="num">3</td>
-            <td id="plus">+</td> -->
+            <td>
+              <button class="num calculateKey" value="1">1</button>
+            </td>
+            <td>
+              <button class="num calculateKey" value="2">2</button>
+            </td>
+            <td>
+              <button class="num calculateKey" value="3">3</button>
+            </td>
+            <td>
+              <button id="plus" class="calculateKey" value="+">+</button>
+            </td>
           </tr>
           <tr>
-            <td><button class="num" onclick="append('0')">0</button></td>
+            <td><button class="num calculateKey">0</button></td>
             <td><button>.</button></td>
-            <td><button id="equal" onclick="calc()">=</button></td>
-            <!-- <td class="num">0</td> -->
-            <!-- <td>.</td> -->
-            <!-- <td id="equal">=</td> -->
-            <!-- <td>+</td> -->
+            <td><button id="equal">=</button></td>
           </tr>
         </tbody>
       </table>
