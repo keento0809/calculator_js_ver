@@ -1,3 +1,4 @@
+// import { checkMarks } from "./index.js";
 export const display = document.querySelector("input");
 
 const showResult = (val) => {
