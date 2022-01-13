@@ -33,15 +33,6 @@ function calculate() {
 }
 
 function convertMark(mark) {
-  // if (mark === "multiply") {
-  //   return "✖️";
-  // } else if (mark === "plus") {
-  //   return "➕";
-  // } else if (mark === "minus") {
-  //   return "➖";
-  // } else if (mark === "divide") {
-  //   return "➗";
-  // }
   if (
     mark === "multiply" ||
     mark === "plus" ||
@@ -76,8 +67,3 @@ calculateKeys.forEach((calculateKey) =>
 marks.forEach((mark) => mark.addEventListener("click", highlight));
 equalKey.addEventListener("click", calculate);
 resetKey.addEventListener("click", reset);
-
-window.addEventListener("DOMContentLoaded", function () {
-  const call = "9*3-2+1000";
-  console.log(eval(call));
-});
