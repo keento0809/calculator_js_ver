@@ -38,6 +38,7 @@ button {
   border-radius: 4px;
   width: 50px;
   height: 50px;
+  transition: transform 0.5s ease-out;
 
   &:active {
     transform: translateY(3px);
@@ -68,4 +69,9 @@ p {
   &.whiten {
     background-color: #fff;
   }
+}
+
+#equal:active {
+  background-color: #fff;
+  // transition: all 0.8s ease;
 }

@@ -15,10 +15,14 @@ function appendKey() {
   checkMarks();
   if (markClicked) display.value = "";
   cal === undefined ? (cal = this.value) : (cal += this.value);
-  if (this.classList.contains("mark")) this.value = convertMark(this.id);
-  display.value += this.value;
+  if (this.classList.contains("mark")) {
+    markClicked = true;
+    display.value += "";
+  } else {
+    markClicked = false;
+    display.value += this.value;
+  }
   console.log(cal);
-  markClicked = false;
 }
 
 function calculate() {
@@ -58,6 +62,8 @@ function reset() {
   showResult("");
   cal = undefined;
   markClicked = false;
+  checkMarks();
+  console.log(cal);
 }
 
 // Hook up the event
