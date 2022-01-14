@@ -8,6 +8,33 @@
   font-size: 24px;
 }
 
+body {
+  margin: 0;
+}
+
+#global-container {
+  height: 100vh;
+}
+
+.calculator {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transform: translateY(-50px);
+          transform: translateY(-50px);
+}
+
 p {
   padding: 5px 10px;
   direction: rtl;
@@ -36,10 +63,6 @@ button {
   border-radius: 4px;
   width: 50px;
   height: 50px;
-  -webkit-transition: -webkit-transform 0.5s ease-out;
-  transition: -webkit-transform 0.5s ease-out;
-  transition: transform 0.5s ease-out;
-  transition: transform 0.5s ease-out, -webkit-transform 0.5s ease-out;
 }
 
 button:active {
@@ -65,8 +88,18 @@ p {
   margin: 0 auto;
 }
 
+.mark {
+  -webkit-transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease;
+}
+
 .mark.whiten {
   background-color: #fff;
+}
+
+#equal {
+  -webkit-transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease;
 }
 
 #equal:active {

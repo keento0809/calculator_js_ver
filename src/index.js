@@ -27,7 +27,6 @@ function appendKey() {
 }
 
 function calculate() {
-  // const value = display.value;
   const value = eval(cal);
   try {
     const func = new Function("return " + value);
