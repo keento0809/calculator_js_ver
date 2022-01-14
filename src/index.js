@@ -3,6 +3,7 @@ import { display, showResult } from "./calculate.js";
 // Get DOM
 const calculateKeys = document.querySelectorAll(".calculateKey");
 const marks = document.querySelectorAll(".mark");
+const subMarks = document.querySelectorAll(".subMark");
 const equalKey = document.querySelector("#equal");
 const resetKey = document.querySelector("#reset");
 
@@ -36,16 +37,6 @@ function calculate() {
   }
 }
 
-function convertMark(mark) {
-  if (
-    mark === "multiply" ||
-    mark === "plus" ||
-    mark === "minus" ||
-    mark === "divide"
-  )
-    return "";
-}
-
 export const checkMarks = () => {
   marks.forEach((mark) => {
     if (mark.classList.contains("whiten")) mark.classList.remove("whiten");
@@ -54,8 +45,6 @@ export const checkMarks = () => {
 
 function highlight() {
   this.classList.add("whiten");
-  markClicked = true;
-  // if (display.value !== "") display.value = "";
 }
 
 function reset() {
@@ -71,5 +60,7 @@ calculateKeys.forEach((calculateKey) =>
   calculateKey.addEventListener("click", appendKey)
 );
 marks.forEach((mark) => mark.addEventListener("click", highlight));
+subMarks.forEach((mark) => mark.addEventListener("click", calculate));
+
 equalKey.addEventListener("click", calculate);
 resetKey.addEventListener("click", reset);
